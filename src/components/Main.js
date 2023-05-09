@@ -5,20 +5,25 @@ import anime from 'animejs'
 const Main = ({children}) => {
 
   const parallax = useRef(null)
+  const sec_parallax = useRef(null)
+
   const [scrollPosition, setScrollPosition] = useState(0)
   const amount = 3
   const speed = .5
   useEffect(()=> {
+    const DEV_calc = `-${(amount + ((scrollPosition / 10) % 20)) }%`
     const animation = anime({
       targets: parallax.current,
-      top: `-${(amount + ((scrollPosition / 10) % 10)) }%`,
+      top: DEV_calc,
       duration: 2000,
       easing: 'easeOutQuad',  
       autoplay: false
     })
-    console.log(`-${amount + ((scrollPosition / 10) % 10) }%`, ((scrollPosition / 10) % 10) )
+    console.log('sc', document.querySelector(".MainContentContainerParallax").scrollTop)
+    console.log(DEV_calc, ((scrollPosition / 10) % 10) )
     const handleScroll = ()=> {
-      const current_position = window.scrollY || 0
+      const current_position = window.scrollY
+      console.log('sc', document.querySelector(".MainContentContainerParallax").scrollTop)
       const triggerPosition = parallax.current?.offsetTop - window.innerHeight || 0
       if (scrollPosition > triggerPosition) {
         animation.play();
@@ -26,6 +31,7 @@ const Main = ({children}) => {
       setScrollPosition(current_position)
     }
     window.addEventListener('scroll', handleScroll)
+    // document.querySelector(".MainContentContainerParallax").addEventListener('scroll', handleScroll)
     
     return () => {window.removeEventListener('scroll', handleScroll)}
   })
@@ -34,7 +40,7 @@ const Main = ({children}) => {
   return (
     <main className={styles.Main}>
       <div className={styles.MainContent__mask}></div>
-        <div className={styles.MainContentContainer}>
+        <div ref={sec_parallax} className={`${styles.MainContentContainer} MainContentContainerParallax`}>
             <div ref={parallax} className={`${styles.MainContent__wallpaper} parallax`}>
               {/* <img src='/images/wallpaper.svg' alt='bg'></img> */}
             </div>

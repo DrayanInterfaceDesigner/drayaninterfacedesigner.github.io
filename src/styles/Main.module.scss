@@ -31,33 +31,23 @@
         z-index: -200;
     }
 }
-// and (orientation: landscape) 
-// @media screen and (min-width: 768px) {
-//     .Main {
-//         // overflow: hidden;
-//         // width: 20%;
-//     }
-//     .MainContentContainer {
-//         // position: relative;
-//         width: 100%;
-//         height: 100vh;
-//         // max-width: 100% !important;
-//         overflow: auto;
-//     }
-//   }
 
   /* Medium screens (tablets) */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) {
     .Main {
-        // overflow: hidden;
-        // width: 20%;
-    }
-    .MainContentContainer {
-        // position: relative;
-        width: 100%;
-        height: 100vh;
-        // max-width: 100% !important;
-        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .MainContentContainer {
+            // position: relative;
+            width: 100%;
+            max-width: 100% !important;
+            height: 100vh;
+            max-width: 100% !important;
+            padding: 0 3rem;
+            overflow: auto;
+        }
     }
   }
   
@@ -66,12 +56,14 @@
     .Main {
         // overflow: hidden;
         // width: 20%;
-    }
-    .MainContentContainer {
-        // position: relative;
-        width: 100%;
-        height: 100vh;
-        // max-width: 100% !important;
-        overflow: auto;
+        .MainContentContainer {
+            // position: relative;
+            width: 100%;
+            max-width: 100% !important;
+            height: 100vh;
+            max-width: 100% !important;
+            padding: 0 4rem;
+            overflow: auto;
+        }
     }
   }

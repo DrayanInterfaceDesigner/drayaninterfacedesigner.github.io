@@ -1,6 +1,5 @@
 .App {
     display: grid;
-    /* grid-template-rows: 0.2fr auto-fit; */
     grid-template-areas: 
     "header"
     "main";
@@ -28,12 +27,9 @@
 } */
 
 /* Medium screens (tablets) */
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px){
     .App {
-        display: grid;
-        grid-template-areas: 
-        "header main";
-        overflow: hidden;
+        grid-template-columns: .1fr auto;
         /* transform: translate(50%, 50%); */
     }
   }
