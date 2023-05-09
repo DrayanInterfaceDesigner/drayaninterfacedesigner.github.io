@@ -1,0 +1,36 @@
+.Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+    border: none;
+    margin: 1rem 0 ;
+    padding: 1rem 2rem;
+    width: 100%;
+    background-color: var(--btn-off-color);
+    border: 1px solid var(--border-off-color);
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .2s;
+
+    .Button__text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        margin-inline: .4rem;
+    }
+    &:hover {
+        background-color: var(--btn-on-color);
+    }
+    &:active {
+        background-color: var(--btn-on-color);
+    }
+}

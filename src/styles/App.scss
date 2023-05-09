@@ -1,0 +1,16 @@
+.App {
+    display: grid;
+    /* grid-template-rows: 0.2fr auto-fit; */
+    grid-template-areas: 
+    "header"
+    "main";
+}
+
+.Header {
+    grid-area: header;
+}
+
+.Main {
+    grid-area: main;
+    max-width: 100vw;
+}

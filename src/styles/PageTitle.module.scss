@@ -1,0 +1,41 @@
+.PageTitle {
+    position: relative;
+    text-align: left;
+    margin: 5rem 0 2rem 0;
+
+    .title {
+        font-size: 2.7rem;
+    }
+
+    .title[align="center"], .subtitle[align="center"] {
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    .title_decorative {
+        position: absolute;
+        top: .5rem;
+        left: 1rem;
+        font-size: 8rem;
+        font-weight: 700;
+        color: var(--background-color);
+        text-shadow: 0rem 0rem 2px rgba(255, 255, 255, .5);  
+        line-height: 0%;
+        white-space: nowrap;
+        z-index: -1;
+        opacity: .35;
+    }
+
+    .title_decorative[align="center"] {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: .5rem;
+        left: 3rem;
+        text-align: center;
+    }
+}

@@ -1,0 +1,21 @@
+.Article {
+
+    
+    .Article__body {
+        
+        h1, h2, h3, h4, h5, h6, a {
+            color: var(--text-color);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: 3rem 0 0;
+        }
+        p {
+            font-family: 'Josefin Sans', sans-serif;
+            color: var(--read-color);
+            line-height: 1.5rem;
+            padding: 1.8rem 0 0;
+        }
+    }
+}

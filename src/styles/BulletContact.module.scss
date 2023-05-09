@@ -1,0 +1,40 @@
+.BulletContact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+
+    .BulletContact__bullet {
+        margin-inline: 1rem;
+        // max-width: 2.5rem;
+        width: 4rem;
+        height: 4rem;
+        padding: 1rem;
+        border: 1px solid var(--border-off-color);
+        border-radius: 50%;
+        transition: .2s;
+
+        .BulletContact__image path{
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        &:hover, &:active {
+            border: 1px solid var(--border-on-color);
+        }
+
+        &:hover .color, &:active .color {
+            fill: rgb(255, 255, 255);
+        }
+    }
+
+
+}
+
+.color {
+    fill: rgb(212, 212, 212);
+}
