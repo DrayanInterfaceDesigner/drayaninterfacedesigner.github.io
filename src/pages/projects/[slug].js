@@ -6,7 +6,7 @@ import html from 'remark-html'
 import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 
-export default function PostPage({ content, data }) {
+export default function ProjectPage({ content, data }) {
   return (
       <Layout>
         <Article body={content} data={data}></Article>

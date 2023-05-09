@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
+  scroll-behavior: smooth;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: rgba(255, 255, 255, 1);
@@ -16,7 +17,10 @@
   --btn-off-color: rgba(20, 19,19,0);
   --btn-on-color: rgba(20, 19,19,1);
   --off-grey-color: rgba(20, 19,19,1);
-  --theme-color: rgba(223, 26 , 92, 1)
+  --theme-color: rgba(223, 26 , 92, 1);
+  
+  --tablet-min-w: 1024px;
+  --desktop-min-w: 1024px;
 }
 
 * {

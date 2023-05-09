@@ -1,6 +1,7 @@
 .HomePage {
     display: grid;
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr;
+    // grid-template-rows: .1fr .1fr;
     grid-template-areas: 
     "me"
     "about";
@@ -8,6 +9,17 @@
     max-width: 100% !important;
     margin: 0 0 3rem 0;
     overflow-x: hidden;
+
+    /*.HomePageScrollabe {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: .1fr .1fr;
+        grid-template-areas: 
+        "me"
+        "about";
+        margin: 0 0 3rem 0;
+        // background-color: magenta;
+    } */
 
     .HomePage__Top {
         display: flex;
@@ -19,8 +31,14 @@
 
     .HomePage__Bottom {
         grid-area: about;
+        // background-color: rgb(187, 255, 0);
     }
 
+
+}
+
+.DesktopHero {
+    display: none;
 }
 
 .Hero {
@@ -29,12 +47,6 @@
     align-items: center;
     justify-content: center;
     text-align: left;
-
-    .location__text {
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 300;
-        font-size: clamp(1.1rem, 1.3rem, 1.5rem);
-    }
 
     .Hero__top {
         text-align: center;
@@ -68,6 +80,12 @@
             font-size: clamp(.8rem, 1rem, 1.3rem);
             line-height: 1.4rem;
         }
+
+        .location__text {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1.1rem, 1.3rem, 1.5rem);
+        }
     }
 
     .text__division {
@@ -80,7 +98,7 @@
 
 
 /* Medium screens (tablets) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px), (orientation: landscape) {
     .Hero {
         display: flex;
         flex-direction: row;
@@ -88,17 +106,10 @@
         justify-content: center;
         text-align: left;
         // background-color: aqua;
-
-        .location__text {
-            font-family: 'Josefin Sans', sans-serif;
-            font-weight: 300;
-            font-size: clamp(1.1rem, 1.1rem, 1.5rem);
-            margin-left: .3rem;
-        }
     
         .Hero__top {
             text-align: left;
-            width: 40%;
+            width: 90%;
         }
     
         .Hero__bottom {
@@ -106,7 +117,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            width: 50%;
+            // width: 50%;
             margin: 1.3rem 0 0 0;
             text-align: left;
     
@@ -123,6 +134,13 @@
                 font-size: 1rem;
                 line-height: 1.4rem;
             }
+
+            .location__text {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                font-size: clamp(1.1rem, 1.1rem, 1.5rem);
+                margin-left: .3rem;
+            }
         }
     
         .text__division {
@@ -135,21 +153,95 @@
   }
   
   /* Large screens (desktops) */
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1025px) {
+
+    .HomePage {
+        width: 100%;
+        max-width: 100% !important;
+        margin: 0 0 3rem 0;
+        overflow-x: hidden;
+        
+        .HomePage__Top__wrapper {
+            display: flex;
+        }
+    
+        .HomePage__Top {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            width: 100%;
+            height: 100vh;
+            max-height: 100vh;
+            grid-area: me;
+            // background-color: aqua;
+        }
+    
+        .HomePage__Bottom {
+            grid-area: about;
+        }
+    
+    }
+
+    .DesktopHero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        // background-color: magenta;
+        height: 100%;
+
+        .DesktopHero__wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 60%;
+            min-height: 60%;
+            // background-color: lime;
+        }
+    
+        .button__readmore {
+            // width: 50%;
+        }
+        
+        .name {
+            font-weight: 700;
+            font-size: calc(1rem + 3vw);
+            color: var(--text-color);
+        }
+
+        .text {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            font-size: calc(1rem + .6vw);
+            margin: 1.5rem 0 0 ;
+            // font-size: clamp(.8rem, 1rem, 1.3rem);
+            line-height: 2rem;
+
+            .text__division {
+                color: var(--theme-color);
+                font-weight: 800;
+            }
+        }
+        
+    }
+    
     .Hero {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: left;
-    
-        .location__text {
-            font-family: 'Josefin Sans', sans-serif;
-            font-weight: 300;
-            font-size: clamp(1.1rem, 1.3rem, 1.5rem);
-        }
+        width: 90%;
+        // background-color: aqua;
+        height:100%;
         
         .Hero__top {
+            display: flex;
+            // justify-content: center;
+            align-items: flex-start;
+            // width: 90%;
+            max-width: 30vw;
             text-align: center;
         }
     
@@ -163,17 +255,25 @@
             text-align: center;
     
             .name {
+                display: none;
                 font-weight: 700;
-                font-size: calc(1rem + 8vw);
+                // font-size: calc(1rem + 8vw);
                 color: var(--text-color);
             }
     
             .text {
+                display: none;
                 font-family: 'Josefin Sans', sans-serif;
                 font-weight: 300;
                 margin: 1.5rem 0 0 ;
-                font-size: clamp(.8rem, 1rem, 1.3rem);
+                // font-size: clamp(.8rem, 1rem, 1.3rem);
                 line-height: 1.4rem;
+            }
+
+            .location__text {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                font-size: clamp(1.1rem, 1.3rem, 1.5rem);
             }
         }
     
@@ -185,7 +285,6 @@
         
     }
   }
-
 // @media screen and (min-width: 768px) {
 
 //     .Hero {

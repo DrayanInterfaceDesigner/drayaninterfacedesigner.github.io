@@ -11,7 +11,7 @@ const ArticleCard = ({post}) => {
   return (
     <div className={styles.ArticleCard}>
 
-        <Link href={`/projects/${post.slug}`}>
+        <Link href={`/articles/${post.slug}`}>
           <div className={styles.ArticleCard__image__container}>
             <img className={styles.ArticleCard__image} src={`/images/thumbs/${post.thumb}`} alt={`Thumbnail for ${post.title}`} />
             <div className={styles.ArticleCard__forwards_container}>

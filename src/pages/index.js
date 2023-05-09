@@ -8,17 +8,43 @@ import Layout from '../components/Layout'
 import FitImage from '@/components/FitImage'
 import styles from '../styles/Home.module.scss'
 import Article from '@/components/Article'
+import Button from '@/components/Button'
 
 
 function HomePage({data, content}) {
   return (
     <Layout>
       <div className={styles.HomePage}>
-        <div className={styles.HomePageScrollabe}>
-        <section className={styles.HomePage__Top}>
-          <div className={styles.Hero}>
+        {/* <div className={styles.HomePageScrollabe}> */}
+          <section className={styles.HomePage__Top}>
+
+            <div className={styles.DesktopHero}>
+              <div className={styles.DesktopHero__wrapper}>
+                <div className={styles.DesktopHero__about__wrapper}>
+                  <p className={styles.name}>Drayan Silva Magalhães</p>
+                  <p className={styles.text}>
+                  Software Developer 
+                  <span className={styles.text__division}> | </span>UI Designer 
+                  <span className={styles.text__division}> | </span>Apprentice 
+                  Researcher and Computer Science Bachelor 
+                  Student at Pontifícia Universidade Católica 
+                  do Paraná
+                  </p>
+                </div>
+
+                <a href="#about" className={styles.button__readmore}>
+                  <Button 
+                  type="button" 
+                  icon="arrow_downward"
+                  >ABOUT ME</Button>
+                </a>
+
+              </div>
+            </div>
+            
+            <div className={styles.Hero}>
             <div className={styles.Hero__top}>
-              <FitImage src="/images/me.png" alt="Author's Face" options={{margin:'3rem 0', width: '90%'}}></FitImage>
+              <FitImage src="/images/me.png" alt="Author's Face" options={{margin:'0rem 0', width: '90%'}}></FitImage>
             </div>
             
             <div className={styles.Hero__bottom}>
@@ -32,13 +58,18 @@ function HomePage({data, content}) {
               Student at Pontifícia Universidade Católica 
               do Paraná
               </p>
+              
             </div>
-          </div>
-        </section>
-        <section className={styles.HomePage__Bottom}>
-          <Article body={content} data={data}></Article>
-        </section>
-        </div>
+            </div>
+
+
+          </section>
+          <section id="about" className={styles.HomePage__Bottom}>
+            <Article body={content} data={data}></Article>
+            <Article body={content} data={data}></Article>
+            <Article body={content} data={data}></Article>
+          </section>
+        {/* </div> */}
       </div>
     </Layout>
   )

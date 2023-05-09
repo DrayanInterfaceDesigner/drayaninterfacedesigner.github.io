@@ -6,8 +6,8 @@ import html from 'remark-html'
 import Article from '@/components/Article'
 import Layout from '@/components/Layout'
 
-export default function PostPage({ content, data }) {
-  console.log(content)
+export default function ArticlePage({ content, data }) {
+  // console.log(content)
   return (
       <Layout>
         <Article body={content} data={data}></Article>
@@ -18,7 +18,6 @@ export default function PostPage({ content, data }) {
 export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'articles')
   const fileNames = fs.readdirSync(postsDirectory)
-
   const paths = fileNames.map((fileName) => {
     return {
       params: {

@@ -27,7 +27,7 @@
 } */
 
 /* Medium screens (tablets) */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1024px), (orientation: landscape){
     .App {
         grid-template-columns: .1fr auto;
         /* transform: translate(50%, 50%); */
@@ -35,7 +35,7 @@
   }
   
   /* Large screens (desktops) */
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1025px) {
     .App {
         display: grid;
         grid-template-areas: 

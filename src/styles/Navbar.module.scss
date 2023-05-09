@@ -99,7 +99,7 @@
 }
 
 /* Medium screens (tablets) */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px), (orientation: landscape){
     .Navbar {
         display: flex;
         flex-direction: column !important;
@@ -158,8 +158,62 @@
   }
   
   /* Large screens (desktops) */
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1025px) {
+    .Navbar {
+        display: flex;
+        flex-direction: column !important;
+        justify-content: flex-start;
+        align-items: center;
+        width: 6vw;
+        min-width: 6vw;
+        max-width: 28% !important;
+        height: 100%;
+        // max-height: 100vmin;
+        padding: 2rem 0;
+        border-bottom: 0;
+        border-right: 1px solid var(--border-on-color);
+        
+        background: rgba( 15, 14, 15, 0.25 );
+        backdrop-filter: blur( 6px );
+        -webkit-backdrop-filter: blur( 6px );
 
+        .Navbar__container {
+            // position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: inherit;
+            // position: absolute;
+            top: 0;
+        }
+    
+    
+        .option {
+            margin: 1.3rem;
+            font-size: 1.7rem;
+            color: rgba(178,178,178,1);
+    
+            &:hover {
+                color: rgb(255, 255, 255);
+                text-shadow: 0rem 0rem .2rem rgba(250, 250, 250, .2);  
+            }
+        }
+    
+        .active {
+            color: rgba(255,255,255, 1);
+        }
+    
+        .follow__bar {
+            position: absolute;
+            bottom: 10%;
+            left: 0;
+            background-color: rgba(223, 26, 92, 1);
+            width: 1rem;
+            height: .4rem;
+            border-radius: 2rem;
+        }
+    }
   }
 
 

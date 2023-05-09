@@ -10,6 +10,7 @@ import styles from '../styles/Projects.module.scss'
 
 
 export default function Articles({ posts }) {
+  console.log(posts)
   return (
       <Layout>
         <div className={styles.Projects}>
