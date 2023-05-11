@@ -1,0 +1,175 @@
+.Hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+
+    .Hero__top {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 3rem 0;
+    }
+
+    .Hero__bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 1.3rem 0 0 0;
+        text-align: center;
+
+        .Hero__links {
+            display: none;
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: calc(1rem + 8vw);
+            color: var(--text-color);
+        }
+
+        .text {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            margin: 1.5rem 0 0 ;
+            font-size: clamp(.8rem, 1rem, 1.3rem);
+            line-height: 1.4rem;
+        }
+
+        .location__text {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            font-size: clamp(1.1rem, 1.3rem, 1.5rem);
+            margin: 0 0 1.5rem 0;
+        }
+    }
+
+    .text__division {
+        color: var(--theme-color);
+        font-weight: 800;
+    }   
+}
+
+@media screen and (min-width: 1024px), (orientation: landscape) {
+    .Hero {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        // background-color: aqua;
+    
+        .Hero__top {
+            text-align: left;
+            width: 90%;
+        }
+    
+        .Hero__bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            // width: 50%;
+            margin: 1.3rem 0 0 0;
+            text-align: left;
+    
+            .name {
+                font-weight: 700;
+                font-size: calc(.2rem + 4vw);
+                color: var(--text-color);
+            }
+    
+            .text {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                margin: 1.5rem 0 0 ;
+                font-size: 1rem;
+                line-height: 1.4rem;
+            }
+
+            .location__text {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                font-size: clamp(1.1rem, 1.1rem, 1.5rem);
+                margin: 0 0 0 .1rem;
+                // margin-left: .3rem;
+            }
+        }
+    
+        .text__division {
+            color: var(--theme-color);
+            font-weight: 800;
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .Hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        width: 80%;
+        // background-color: aqua;
+        height:100%;
+        
+        .Hero__top {
+            display: flex;
+            margin: 0 0;
+            // justify-content: center;
+            align-items: flex-start;
+            // width: 90%;
+            max-width: 30vw;
+            text-align: center;
+        }
+    
+        .Hero__bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 1.3rem 0 0 0;
+            text-align: center;
+            
+            .Hero__links {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                // width: 100%;
+            }
+            
+            .name {
+                display: none;
+                font-weight: 700;
+                // font-size: calc(1rem + 8vw);
+                color: var(--text-color);
+            }
+    
+            .text {
+                display: none;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                margin: 1.5rem 0 0 ;
+                // font-size: clamp(.8rem, 1rem, 1.3rem);
+                line-height: 1.4rem;
+            }
+            .location__text {
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                font-size: calc(1.1rem + .4vw);
+                margin: 0;
+            }
+        }
+    
+        .text__division {
+            color: var(--theme-color);
+            font-weight: 800;
+        }
+    }
+}

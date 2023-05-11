@@ -56,3 +56,12 @@
     }
 
 }
+
+@media screen and (min-width: 1025px) {
+    .ContactForm {
+        align-items: flex-start;
+        .ContactForm__title{
+            margin: 2rem 0 1rem .3rem;
+        }
+    }
+}

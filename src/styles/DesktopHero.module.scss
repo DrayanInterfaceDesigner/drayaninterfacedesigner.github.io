@@ -1,0 +1,46 @@
+.DesktopHero {
+    display: none;
+}
+
+@media screen and (min-width: 1025px) {
+    .DesktopHero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        // background-color: magenta;
+        height: 100%;
+        .DesktopHero__wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 60%;
+            min-height: 60%;
+            margin: 0 0 0 3rem;
+            // background-color: lime;
+        }
+    
+        .button__readmore {
+            // width: 50%;
+        }
+        
+        .name {
+            font-weight: 700;
+            font-size: calc(1rem + 3vw);
+            color: var(--text-color);
+        }
+        .text {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            font-size: calc(1rem + .6vw);
+            margin: 1.5rem 0 0 ;
+            // font-size: clamp(.8rem, 1rem, 1.3rem);
+            line-height: 2rem;
+            .text__division {
+                color: var(--theme-color);
+                font-weight: 800;
+            }
+        }
+        
+    }
+}

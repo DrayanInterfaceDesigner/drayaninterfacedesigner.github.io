@@ -105,6 +105,9 @@
         font-size: 1rem;
         line-height: 1rem;
         color: var(--summary-color);
+        b {
+            color: var(--summary-color) !important;
+        }
     }
 }
 // n apaga puta

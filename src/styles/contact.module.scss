@@ -1,0 +1,38 @@
+.HeroCard__Container {
+    display: none;
+}
+
+@media screen and (min-width: 1025px) {
+    .Contact {
+        display: grid;
+        grid-template-areas: 
+        "form card";
+        // background-color: brown;
+        width: 100%;
+    }
+    .Contact__Container {
+        grid-area: form;
+        .Contact__Aligner {
+            margin-top: -2rem;
+        }
+    }
+    .Contact__BulletContact {
+        display: none;
+    }
+    .HeroCard__Container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        // background-color: aqua;
+        grid-area: card;
+        .HeroCard__Sizer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 80%;
+            // background-color: blueviolet;
+        }
+    }
+}

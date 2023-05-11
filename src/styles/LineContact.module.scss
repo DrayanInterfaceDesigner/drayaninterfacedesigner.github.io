@@ -1,0 +1,13 @@
+.LineContact {
+    margin: 1rem;
+    .LineContact__container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .LineContact__bullet {
+        width: calc(2rem + .1vw);
+        margin-inline: 0 1rem;
+    }
+
+}

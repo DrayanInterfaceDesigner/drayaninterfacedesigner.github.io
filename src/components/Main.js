@@ -8,29 +8,35 @@ const Main = ({children}) => {
   const sec_parallax = useRef(null)
 
   const [scrollPosition, setScrollPosition] = useState(0)
-  const amount = 3
+  let amount = 3
   const speed = .5
   useEffect(()=> {
-    const DEV_calc = `-${(amount + ((scrollPosition / 10) % 20)) }%`
+    amount += ((scrollPosition / 10) % 50)
     const animation = anime({
       targets: parallax.current,
-      top: DEV_calc,
+      top: `-${amount}%`,
       duration: 2000,
       easing: 'easeOutQuad',  
       autoplay: false
     })
-    console.log('sc', document.querySelector(".MainContentContainerParallax").scrollTop)
-    console.log(DEV_calc, ((scrollPosition / 10) % 10) )
+    console.log(`-${amount}%`)
     const handleScroll = ()=> {
-      const current_position = window.scrollY
-      console.log('sc', document.querySelector(".MainContentContainerParallax").scrollTop)
+      const current_position = window.scrollY || document.querySelector(".MainContentContainerParallax").scrollTop
       const triggerPosition = parallax.current?.offsetTop - window.innerHeight || 0
       if (scrollPosition > triggerPosition) {
+        amount *= -1
+        animation.play();
+      }
+      else {
+        amount *= 1
         animation.play();
       }
       setScrollPosition(current_position)
     }
-    window.addEventListener('scroll', handleScroll)
+    
+    // console.log(document.querySelector(".MainContentContainerParallax").scrollTop)
+    document.querySelector(".MainContentContainerParallax").addEventListener('scroll', handleScroll)
+    // window.addEventListener('scroll', handleScroll)
     // document.querySelector(".MainContentContainerParallax").addEventListener('scroll', handleScroll)
     
     return () => {window.removeEventListener('scroll', handleScroll)}
@@ -40,8 +46,10 @@ const Main = ({children}) => {
   return (
     <main className={styles.Main}>
       <div className={styles.MainContent__mask}></div>
-        <div ref={sec_parallax} className={`${styles.MainContentContainer} MainContentContainerParallax`}>
-            <div ref={parallax} className={`${styles.MainContent__wallpaper} parallax`}>
+      {/*ref={sec_parallax}*/}
+      {/*ref={parallax} */}
+        <div className={`${styles.MainContentContainer} MainContentContainerParallax`}>
+            <div className={`${styles.MainContent__wallpaper} parallax`}>
               {/* <img src='/images/wallpaper.svg' alt='bg'></img> */}
             </div>
             {children}

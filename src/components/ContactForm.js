@@ -4,27 +4,35 @@ import Button from './Button';
 
 const ContactForm = () => {
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [subject, setSubject] = useState('')
+    const [message, setMessage] = useState('')
+
   
     const handleSubmit = async (event) => {
-      event.preventDefault();
+      event.preventDefault()
       try {
-        const response = await fetch('/api/send-email', {
-          method: 'POST',
-          body: JSON.stringify({ name, email, message }),
+        const response = await fetch("/api/sendgrid", {
+          body: JSON.stringify({
+            email: email,
+            name: name,
+            subject: subject,
+            message: message,
+          }),
           headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+        })
+
         if (!response.ok) {
-          throw new Error('Failed to send email');
+          throw new Error('Failed to send email')
         }
-        alert('Email sent successfully!');
+        alert('Email sent successfully!')
       } catch (error) {
         console.error(error);
-        alert('Failed to send email');
+        alert('Failed to send email')
       }
     };
 
@@ -47,11 +55,21 @@ const ContactForm = () => {
         <input
           className={styles.ContactForm__input}
           lining="single"
-          placeholder='SUBJECT'
+          placeholder='E-MAIL'
           id="email"
           type="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
+          required
+        />
+        <input
+          className={styles.ContactForm__input}
+          lining="single"
+          placeholder='SUBJECT'
+          id="subject"
+          type="subject"
+          value={subject}
+          onChange={(event) => setSubject(event.target.value)}
           required
         />
         {/* <label htmlFor="message">Message:</label> */}
