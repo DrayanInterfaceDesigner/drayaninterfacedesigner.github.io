@@ -9,7 +9,7 @@ const ArticleCard = ({post}) => {
 
   let text_content = getTextContent(post?.htmlString, 150)
   return (
-    <div className={styles.ArticleCard}>
+    <div className={`${styles.ArticleCard} scale-animate`}>
 
         <Link href={`/articles/${post.slug}`}>
           <div className={styles.ArticleCard__image__container}>

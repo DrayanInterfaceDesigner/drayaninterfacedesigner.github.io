@@ -19,7 +19,7 @@ const Main = ({children}) => {
       easing: 'easeOutQuad',  
       autoplay: false
     })
-    console.log(`-${amount}%`)
+    // console.log(`-${amount}%`)
     const handleScroll = ()=> {
       const current_position = window.scrollY || document.querySelector(".MainContentContainerParallax").scrollTop
       const triggerPosition = parallax.current?.offsetTop - window.innerHeight || 0

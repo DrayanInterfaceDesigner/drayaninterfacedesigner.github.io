@@ -21,7 +21,7 @@ export async function getStaticPaths() {
   const paths = fileNames.map((fileName) => {
     return {
       params: {
-        slug: fileName.replace(/\.md$/, ''),
+        slug: fileName.replace(/\.mdx$/, ''),
       },
     }
   })
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params
-  const fullPath = path.join(process.cwd(), 'src', 'pages', 'articles', `${slug}.md`)
+  const fullPath = path.join(process.cwd(), 'src', 'pages', 'articles', `${slug}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { content, data } = matter(fileContents)
   const processedContent = await remark().use(html).process(content)

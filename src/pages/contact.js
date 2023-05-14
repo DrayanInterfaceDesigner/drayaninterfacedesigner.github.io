@@ -7,6 +7,7 @@ import HeroCard from '@/components/HeroCard'
 import styles from '../styles/contact.module.scss'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import anime from 'animejs'
 
 const Contact = () => {
 
@@ -17,6 +18,18 @@ const Contact = () => {
   }
   
   useEffect(()=> {
+
+
+    anime({
+      targets: '.ani-surge_l_r',
+      translateX: [-40, 0],
+      opacity: [0, 1],
+      easing: 'easeInOutBack',
+      duration: 400,
+      steps: 4,
+      delay: anime.stagger(60)
+    })
+
     if (document.readyState === "complete") {
       sizeHandler(window.innerWidth)
     } else {
@@ -32,7 +45,7 @@ const Contact = () => {
   return (
     <Layout>
       <div className={styles.Contact}>
-        <div className={styles.Contact__Container}>
+        <div className={styles.Contact__Container + " ani-surge_l_r"}>
           <PageTitle title="Contact Me" type="get in touch" align={!isDesktop ? 'center' : 'left'}></PageTitle>
           <div className={styles.Contact__BulletContact}>
             <BulletContact></BulletContact>

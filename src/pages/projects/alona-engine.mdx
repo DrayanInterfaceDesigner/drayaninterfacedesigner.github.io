@@ -1,0 +1,58 @@
+---
+title: 'Alona Engine.js'
+subtitle: a project of great proportions for JavaScript
+date: "2023-04-22"
+thumb: 'alonaengine_thumb.png'
+featured: 'alonaengine_featured.png'
+type: "Project"
+priority: 5
+---
+
+## Explanation
+
+Alona Engine is a JavaScript Engine to simulate complex physics performantly and with ease of use. It is a new project so still in its humble begning, with some bugs and features, but you can try it yourself already.
+
+Alona is being made using TypeScript, Three.js and lots of math, and I'll probably use some physics libraries for some physics simulations that won't affect the core of the engine.
+
+## Foundations 
+The ideia is to divide it into 4 parts: Particles, Relations, Spaces and Forces.
+
+Particles represent each individual point in space with mass, being it a literal vector, to a fully grown bear, with big claws and a cute hat, literally everything with mass and position.
+
+Relations are the relations between particles, they glues them together and affects its surroundings. It is important to notice that relations will not directly affect the related particles, they will tell the particles how to act together when a force is applied.
+Also, a particle always have a realtion with it's space, so one or a group of particles can affect the space itself, and therefore, affecting other particles.
+
+Spaces are the stage in which the particles play an act, it can be manipulated to achieve different conditions, from gravity to umidity, friction, universal constants and more (maybe quantum physics when the time to move it to webassembly come).
+
+And finally, the forces. The forces are manipulations in matrices, vectors and "inner particles" (this engine is being made with low fidelity simulation of atoms and elemental particles in mind). The ideia here is to be able to represent complex forces or influence with ease and speed, in exchange of precision.
+
+With all that said, unfortunately I don't think I'll be focusing on Alona much in the next few months (I'm writting it in 2023/05/13), so you can consider it paused on its current version (SprottLinzD 1.3.0-alpha). This version don't have much in it, I was messing around with Three, pipelines and different approachs for rendering before actually doing physics, BUT it has some pretty chaotic attractors for you to play with.
+
+
+## Motivation
+
+My motivation to make this project was basically my frustation when I tried to make some chaotic attractors and fluid simulations but couldn't find anything actually perfomant or good in JS. I wanted to make actual simulations, in an environment with a big scope of variables.
+
+### And... why Javascript again? 
+
+Okay, okay, I know what you're probably thinking. JS isn't perfomant, it is buggy, clunky and problematic. And yes, I agree with all that, at least partially...
+JS isn't as performant as other languages but it can compete with python. It sure has this little big problem of being single threaded, it do actually have some multithreading (that I'll probably gonna use), but this still a problem. And to argue against this, all I can offer is that I'm crazy, and some V8 publications that I stole from SimonDev(SimonDev, 2021) about speed, memory (V8, 2020) and performance (V8, 2023). I recommend you to check those out and you can find them in the refereces bellow.
+
+
+# Links
+
+You can find the repository for this project in:
+https://github.com/DrayanInterfaceDesigner/alona-engine
+
+
+# References
+
+Video - 'How Slow is JavaScript Really? JavaScript vs C++ (Data Structures & Optimization)'
+(Available at: https://www.youtube.com/watch?v=WLwTlC1R2sY)
+
+High-performance garbage collection for C++ · V8. Available at: <https://v8.dev/blog/high-performance-cpp-gc>. Accessed in: 10 apr. 2023.
+<hr>
+
+‌A New Crankshaft for V8. Available at: <https://blog.chromium.org/2010/12/new-crankshaft-for-v8.html>. Accessed in: 10 apr. 2023.
+
+‌

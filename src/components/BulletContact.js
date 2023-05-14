@@ -7,7 +7,7 @@ const BulletContact = () => {
   return (
     <div className={styles.BulletContact}>
     
-        <div className={styles.BulletContact__bullet} >
+        <div className={styles.BulletContact__bullet + " ani-surge_t_b"} >
             <a 
                 href='https://github.com/DrayanInterfaceDesigner' 
                 target='blank'>
@@ -15,7 +15,7 @@ const BulletContact = () => {
             </a>
         </div>
 
-        <div className={styles.BulletContact__bullet} >
+        <div className={styles.BulletContact__bullet + " ani-surge_t_b"} >
             <a 
                 href='https://www.linkedin.com/in/drayan-silva-magalhães-6a8061271/' 
                 target='blank'>

@@ -38,11 +38,11 @@ const ContactForm = () => {
 
   return (
     <div className={styles.ContactForm}>
-      <p className={styles.ContactForm__title}>SEND ME AN E-MAIL</p>
+      <p className={styles.ContactForm__title + " ani-surge_l_r"}>SEND ME AN E-MAIL</p>
       <form onSubmit={handleSubmit} className={styles.ContactForm__form}>
         {/* <label htmlFor="name">Name:</label> */}
         <input
-          className={styles.ContactForm__input}
+          className={styles.ContactForm__input + " ani-surge_l_r"}
           lining="single"
           placeholder='NAME'
           id="name"
@@ -53,7 +53,7 @@ const ContactForm = () => {
         />
         {/* <label htmlFor="email">Email:</label> */}
         <input
-          className={styles.ContactForm__input}
+          className={styles.ContactForm__input + " ani-surge_l_r"}
           lining="single"
           placeholder='E-MAIL'
           id="email"
@@ -63,7 +63,7 @@ const ContactForm = () => {
           required
         />
         <input
-          className={styles.ContactForm__input}
+          className={styles.ContactForm__input + " ani-surge_l_r"}
           lining="single"
           placeholder='SUBJECT'
           id="subject"
@@ -74,7 +74,7 @@ const ContactForm = () => {
         />
         {/* <label htmlFor="message">Message:</label> */}
         <textarea
-          className={styles.ContactForm__textarea}
+          className={styles.ContactForm__textarea + " ani-surge_l_r"}
           lining="multi"
           placeholder='TALK YOUR GUTS OUT!'
           rows='6'

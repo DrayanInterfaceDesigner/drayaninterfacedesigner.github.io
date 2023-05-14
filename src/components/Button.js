@@ -3,7 +3,7 @@ import styles from '../styles/Button.module.scss'
 
 const Button = ({text, type, icon, children}) => {
   return (
-    <button type={type} className={styles.Button}>
+    <button type={type} className={styles.Button + " ani-surge_l_r"}>
       <p className={styles.Button__text}>
       {text || children}
       </p>

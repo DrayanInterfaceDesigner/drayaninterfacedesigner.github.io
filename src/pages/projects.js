@@ -7,9 +7,22 @@ import Layout from '@/components/Layout'
 import PageTitle from '@/components/PageTitle'
 import PostCard from '@/components/PostCard'
 import styles from '../styles/Projects.module.scss'
+import { useEffect } from 'react'
+import anime, { timeline } from 'animejs'
 
 
-export default function Projects({ posts }) {
+
+export default function Projects({ posts }) { 
+  const ordered = posts.sort((a,b) => (parseInt(b.priority || 0) - parseInt(a.priority || 0)))
+  useEffect(()=> {
+    anime({
+      targets: '.scale-animate',
+      scale:[.6,1],
+      opacity: [0, 1],
+      easing:'easeInOutQuint',
+      delay: anime.stagger(90)
+    })
+  })
   return (
       <Layout>
         <div className={styles.Projects}>
@@ -28,7 +41,7 @@ export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'projects')
   const filenames = fs.readdirSync(postsDirectory)
   const posts = filenames
-    .filter((filename) => filename.endsWith('.md'))
+    .filter((filename) => filename.endsWith('.mdx'))
     .map((filename) => {
       const filePath = path.join(postsDirectory, filename)
       const fileContents = fs.readFileSync(filePath, 'utf8')
@@ -37,7 +50,7 @@ export async function getStaticProps() {
       const matterResult = matter(fileContents)
 
       // Combine the data with the filename and slug
-      const slug = filename.replace(/\.md$/, '')
+      const slug = filename.replace(/\.mdx$/, '')
       return {
         slug,
         ...matterResult.data,

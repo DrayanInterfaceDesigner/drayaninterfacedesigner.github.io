@@ -7,10 +7,20 @@ import Layout from '@/components/Layout'
 import PageTitle from '@/components/PageTitle'
 import ArticleCard from '@/components/ArticleCard'
 import styles from '../styles/Projects.module.scss'
+import { useEffect } from 'react'
+import anime from 'animejs'
 
 
 export default function Articles({ posts }) {
-  console.log(posts)
+  useEffect(()=> {
+    anime({
+      targets: '.scale-animate',
+      scale:[.6,1],
+      opacity: [0, 1],
+      easing:'easeInOutQuint',
+      delay: anime.stagger(90)
+    })
+  })
   return (
       <Layout>
         <div className={styles.Projects}>
@@ -30,7 +40,7 @@ export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'articles')
   const filenames = fs.readdirSync(postsDirectory)
   const posts = await Promise.all(filenames
-    .filter((filename) => filename.endsWith('.md'))
+    .filter((filename) => filename.endsWith('.mdx'))
     .map(async (filename) => {
       const filePath = path.join(postsDirectory, filename)
       const fileContents = await fs.promises.readFile(filePath, 'utf8')
@@ -44,7 +54,7 @@ export async function getStaticProps() {
       
 
       // Combine the data with the filename and slug
-      const slug = filename.replace(/\.md$/, '')
+      const slug = filename.replace(/\.mdx$/, '')
       return {
         slug,
         htmlString,

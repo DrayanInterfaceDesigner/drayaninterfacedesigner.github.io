@@ -4,7 +4,7 @@ import styles from '../styles/PostCard.module.scss'
 
 const PostCard = ({post}) => {
   return (
-    <div className={styles.PostCard}>
+    <div className={`${styles.PostCard} scale-animate`}>
 
         <Link href={`/projects/${post.slug}`}>
           <div className={styles.PostCard__image__container}>

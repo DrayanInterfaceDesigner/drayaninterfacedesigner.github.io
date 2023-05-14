@@ -3,7 +3,7 @@ import styles from '../styles/LineContact.module.scss'
 
 const LineContact = ({link, text, children}) => {
   return (
-    <div className={styles.LineContact}>
+    <div className={`${styles.LineContact} ani-surge-d_b`}>
         <a href={link}
           target='blank'>
           <div className={styles.LineContact__container}>

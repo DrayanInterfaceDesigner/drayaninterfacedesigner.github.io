@@ -17,7 +17,7 @@ function HomePage({data, content}) {
           <section className={styles.HomePage__Top}>
             <Hero></Hero>
           </section>
-          <section id="about" className={styles.HomePage__Bottom}>
+          <section id="about" className={`${styles.HomePage__Bottom}`}>
             <Article body={content} data={data}></Article>
           </section>
       </div>
