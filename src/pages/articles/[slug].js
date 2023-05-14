@@ -16,7 +16,7 @@ export default function ArticlePage({ content, data }) {
 }
 
 export async function getStaticPaths() {
-  const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'articles')
+  const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'articles', 'articles')
   const fileNames = fs.readdirSync(postsDirectory)
   const paths = fileNames.map((fileName) => {
     return {
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params
-  const fullPath = path.join(process.cwd(), 'src', 'pages', 'articles', `${slug}.mdx`)
+  const fullPath = path.join(process.cwd(), 'src', 'pages', 'articles', 'articles', `${slug}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { content, data } = matter(fileContents)
   const processedContent = await remark().use(html).process(content)

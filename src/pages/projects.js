@@ -38,7 +38,7 @@ export default function Projects({ posts }) {
 }
 
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'projects')
+  const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'projects', 'projects')
   const filenames = fs.readdirSync(postsDirectory)
   const posts = filenames
     .filter((filename) => filename.endsWith('.mdx'))
