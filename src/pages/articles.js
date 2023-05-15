@@ -20,7 +20,7 @@ export default function Articles({ posts }) {
       easing:'easeInOutQuint',
       delay: anime.stagger(90)
     })
-  })
+  }, [])
   return (
       <Layout>
         <div className={styles.Projects}>

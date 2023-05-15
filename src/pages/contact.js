@@ -40,7 +40,7 @@ const Contact = () => {
       document.removeEventListener('load', sizeHandler)
       window.addEventListener('resize', ()=> sizeHandler(window.innerWidth))
     }
-  })
+  }, [])
 
   return (
     <Layout>
