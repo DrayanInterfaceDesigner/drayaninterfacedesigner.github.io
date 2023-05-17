@@ -30,7 +30,7 @@ function Layout({ children }) {
     animation.pause()
   
 
-    if(vignetteIsDone == 0 && !vignetteIsDone) {
+    if(vignetteIsDone == 0 || !vignetteIsDone) {
       entrance.current.style.display = "block"
       document.querySelector("html").style.overflowY = "hidden"
       anime({
