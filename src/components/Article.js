@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import anime from 'animejs'
 
 const Article = ({body, data}) => {
+
   useEffect(()=> {
     const PIH = document.querySelector('.ParentInnerHTML')
     const PIH_children = PIH.children[0].children

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.scss'
-import { useRouter } from 'next/router'
 import { setCookie, parseCookies } from 'nookies'
 
-const Navbar = ({lastActiveButton }) => {
+const Navbar = ({lastActiveButton}) => {
   const [onBtn, setActive] = useState(lastActiveButton )
-  const router = useRouter()
-
+  
   useEffect(() => {
     const cookies = parseCookies()
     const lastActiveButton = cookies.lastActiveButton
