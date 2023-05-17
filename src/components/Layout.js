@@ -9,17 +9,17 @@ import { setCookie, parseCookies } from 'nookies'
 
 function Layout({ children }) {
   const entrance = useRef(null)
-  const cookies = parseCookies()
-  const vignetteIsDone = cookies.vignetteIsDone
   const handleDone = (bool)=> {
     setCookie(null, 'vignetteIsDone', bool.toString(), { maxAge: 30 * 24 * 60 * 60, path: '/' })
   }
 
-  if(!vignetteIsDone) {
-    handleDone(0)
-  }
-
   useEffect(()=> {
+
+    const cookies = parseCookies()
+    const vignetteIsDone = cookies.vignetteIsDone
+    if(!vignetteIsDone) {
+      handleDone(0)
+    }
 
     const animation = anime({
       targets: '.ani-surge-d_b',
@@ -28,8 +28,9 @@ function Layout({ children }) {
       delay: anime.stagger(90)
     })
     animation.pause()
+  
 
-    if(vignetteIsDone == 0) {
+    if(vignetteIsDone == 0 && !vignetteIsDone) {
       entrance.current.style.display = "block"
       document.querySelector("html").style.overflowY = "hidden"
       anime({
