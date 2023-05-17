@@ -17,6 +17,8 @@ function Layout({ children }) {
 
   useEffect(()=> {
 
+    alert('vignette is done TESTING ON PRODUCTION LMAO')
+
     const animation = anime({
       targets: '.ani-surge-d_b',
       translateY: [-20, 0],
