@@ -1,10 +1,10 @@
-import sendgrid from "@sendgrid/mail";
+// import sendgrid from "@sendgrid/mail";
+const sendgrid = require("@sendgrid/mail");
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 async function sendEmail(req, res) {
   try {
-    console.log("REQ.BODY", req.body)
     await sendgrid.send({
       to: "drayanreset@gmail.com",
       from: "drayandev.port@gmail.com", // your website email address here
@@ -44,3 +44,21 @@ async function sendEmail(req, res) {
 }
 
 export default sendEmail;
+
+
+// console.log("REQ.BODY", req.body)
+// const body = JSON.parse(req.body)
+// const message = `
+//   Name: ${body.name} \r\n
+//   Email: ${body.email}\r\n
+//   subject: ${body.subject}\r\n
+//   Message: ${body.message}\r\n
+// `
+// const sendData = {
+//   to: 'drayanreset@gmail.com',
+//   from: 'drayandev.port@gmail.com',
+//   subject: 'New message from your Portfolio', 
+//   text: message,
+//   html: message.replace(/\r\n/g, '<br>')
+// }
+// await sendgrid.send(sendData)

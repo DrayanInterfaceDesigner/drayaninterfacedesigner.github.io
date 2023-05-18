@@ -31,7 +31,13 @@ const ContactForm = () => {
         }
         alert('Email sent successfully!')
       } catch (error) {
-        console.error(error);
+        console.error(error)
+        console.log(({
+          email: email,
+          name: name,
+          subject: subject,
+          message: message,
+        }))
         alert('Failed to send email')
       }
     };
