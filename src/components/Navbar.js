@@ -5,10 +5,13 @@ import { setCookie, parseCookies } from 'nookies'
 
 const Navbar = ({lastActiveButton}) => {
   const [onBtn, setActive] = useState(lastActiveButton )
-  
+
   useEffect(() => {
     const cookies = parseCookies()
     const lastActiveButton = cookies.lastActiveButton
+    if(!lastActiveButton) {
+      setActive(1)
+    }
     if (lastActiveButton) {
       setActive(Number(lastActiveButton))
     }
