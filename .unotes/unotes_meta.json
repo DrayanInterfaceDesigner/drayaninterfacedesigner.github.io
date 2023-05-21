@@ -1,0 +1,87 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "out": {
+      "name": "out",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "components": {
+          "name": "components",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "pages": {
+          "name": "pages",
+          "isOrdered": true,
+          "folders": {
+            "api": {
+              "name": "api",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "articles": {
+              "name": "articles",
+              "isOrdered": true,
+              "folders": {
+                "articles": {
+                  "name": "articles",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {
+                    "test": 0
+                  }
+                }
+              },
+              "files": {}
+            },
+            "misc": {
+              "name": "misc",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "projects": {
+              "name": "projects",
+              "isOrdered": true,
+              "folders": {
+                "projects": {
+                  "name": "projects",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                }
+              },
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "styles": {
+          "name": "styles",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}

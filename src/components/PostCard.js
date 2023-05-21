@@ -8,7 +8,7 @@ const PostCard = ({post}) => {
 
         <Link href={`/projects/${post.slug}`}>
           <div className={styles.PostCard__image__container}>
-            <img className={styles.PostCard__image} src={`/images/thumbs/${post.thumb}`} alt={`Thumbnail for ${post.title}`} />
+            <img className={styles.PostCard__image} src={`${post?.thumb.startsWith('http') ? post.thumb : `/images/thumbs/${post.thumb}`}`} alt={`Thumbnail for ${post.title}`} />
             <div className={styles.PostCard__forwards_container}>
               <span className={`material-symbols-outlined ${styles.PostCard__forwards__arrow}`}>
                 arrow_forward

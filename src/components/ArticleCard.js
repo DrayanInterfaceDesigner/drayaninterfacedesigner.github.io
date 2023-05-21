@@ -6,14 +6,14 @@ import { useState } from 'react'
 import { useRef } from 'react'
 
 const ArticleCard = ({post}) => {
-
+  const isFiller = post ? false : true
   let text_content = getTextContent(post?.htmlString, 150)
   return (
-    <div className={`${styles.ArticleCard} scale-animate`}>
+    <div className={`${styles.ArticleCard} ${isFiller ? styles.isFiller : ''} scale-animate `}>
 
-        <Link href={`/articles/${post.slug}`}>
+        <Link href={`/articles/${post?.slug}`}>
           <div className={styles.ArticleCard__image__container}>
-            <img className={styles.ArticleCard__image} src={`/images/thumbs/${post.thumb}`} alt={`Thumbnail for ${post.title}`} />
+            <img className={styles.ArticleCard__image} src={`${post?.thumb.startsWith('http') ? post?.thumb : `/images/thumbs/${post?.thumb}`}`} alt={`Thumbnail for ${post?.title}`} />
             <div className={styles.ArticleCard__forwards_container}>
               <span className={`material-symbols-outlined ${styles.ArticleCard__forwards__arrow}`}>
                 arrow_forward
@@ -30,6 +30,7 @@ const ArticleCard = ({post}) => {
 }
 
 const getTextContent = (htmlString, chars) => {
+  if(!htmlString || !chars) return
   const str = htmlString.toString().split(/<\/?p>|<\/?h1>|<\/?h[2-6]>/gi)
   .join("").split("</p>").join("").slice(0, chars)
   return str

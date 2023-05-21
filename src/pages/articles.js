@@ -29,6 +29,8 @@ export default function Articles({ posts }) {
                 {posts.map((post, index) => (
                     <ArticleCard key={index} post={post}></ArticleCard>
                 ))}
+                <ArticleCard post={null}></ArticleCard>
+                <ArticleCard post={null}></ArticleCard>
             </div>
         </div>
       </Layout>

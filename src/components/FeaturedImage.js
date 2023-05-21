@@ -17,7 +17,7 @@ const FeaturedImage = ({data}) => {
     <div className={`${styles.FeaturedImage} ani-appear`}>
         <img 
             className={styles.FeaturedImage__image} 
-            src={`/images/featured/${data.featured}`} 
+            src={`${data?.featured.startsWith('http') ? data.featured : `/images/featured/${data.featured}`}`} 
             alt={`Featured Image for ${data?.title}`}>    
         </img>
     </div>

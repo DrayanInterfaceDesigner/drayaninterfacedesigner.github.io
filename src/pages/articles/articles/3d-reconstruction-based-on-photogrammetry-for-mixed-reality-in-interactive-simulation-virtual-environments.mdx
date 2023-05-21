@@ -1,0 +1,236 @@
+---
+title: "3D RECONSTRUCTION BASED ON PHOTOGRAMMETRY FOR MIXED REALITY IN INTERACTIVE SIMULATION VIRTUAL ENVIRONMENTS"
+subtitle: "Paper regarding photogrammetry and M.R Simulated Envs."
+date: "2023-04-22"
+thumb: 'https://i.imgur.com/ispd8Wa.png'
+featured: 'https://i.imgur.com/9tZ8J0c.png'
+type: "Article"
+---
+
+## <strong>RECONSTRUÇÃO 3D BASEADA EM FOTOGRAMETRIA PARA REALIDADE MISTA EM AMBIENTES VIRTUAIS DE SIMULAÇÃO INTERATIVA</strong>
+
+## ***3D RECONSTRUCTION BASED ON PHOTOGRAMMETRY FOR MIXED REALITY IN INTERACTIVE SIMULATION VIRTUAL ENVIRONMENTS***
+
+Dr. Marcelo Rudek[\[1\]](#_ftn1)
+Drayan Silva Magalhães[\[2\]](#_ftn2)
+
+*Resumo – Esse papel estudará opções de software, bibliotecas e dispositivos para reconstrução 3D baseada em fotogrametria para desenvolvimento de um protótipo de simulação virtual interativa realista. Neste, definirei critérios de avaliação de qualidade para os softwares escolhidos para os tópicos antes citados, assim como apresentarei testes qualitativos para justificar o uso deles. Por fim, apresentarei um protótipo de aplicativo para Microsoft HoloLens 2, construído usando as ferramentas definidas adequadas nesta pesquisa para o propósito da mesma.*
+
+*Palavras-chave: Fotogrametria. Realidade-Mista. Reconstrução-3D. Simulação. HoloLens-2. AliceVision. Polycam. Unity.*
+
+Abstract – This paper will study software, libraries, and devices options for 3D reconstruction based on photogrammetry, and development of a prototype for realistic interactive virtual environment simulations. In this, I will define quality evaluation criteria for the chosen software for the aforementioned topics. Finally, I will present an application prototype targeting Mircrosoft HoleLens 2, built using the tools judged adequate for the purpose in this research.
+
+*Keywords: Photogrammetry. Mixed-Reality. 3D-Reconstruction. Virtual-Simulation. HoloLens-2. AliceVision. Polycam. Unity.*
+    ㅤ
+<br>
+
+ㅤ
+
+***
+[\[1\]](#_ftnref1) Prof. Dr. Eng., Graduate Program in Production and Systems Engineering, PPGEPS, Pontifical Catholic University of Paraná – PUCPR. Contact: marcelo.rudek@pucpr.
+
+[\[2\]](#_ftnref2) Bachelor's Degree Student in Computer Science, Pontifical Catholic University of Paraná – PUCPR. Contact: drayanreset@gmail\.com \|\| drayan\.magalhaes@pucpr\.edu\.br \.
+
+ㅤ
+***
+
+<br>
+
+### I. INTRODUCTION
+
+            Mixed reality (MR) is a general term that englobes virtual and augmented reality. It is a spectrum between the real and the virtual world, augmented reality being the closest to the real world, displaying interactable features, objects, and interfaces on top of reality. And virtual reality, completely obfuscating the user’s vision to make a completely virtual surrounding to be interacted with (O que é realidade misturada?, 2023). These objects and environments to be displayed in MR devices can be retrieved from the real-world using photogrammetry, which is a technology consisting in taking highly overlapping photos of an object or environment to reconstruct it programmatically, generating a 3D model of the given scanned target.
+
+            The focus of this research is to use photogrammetry and mixed reality combined to make a prototype application capable of composing virtual environments for interactive simulation using the reconstructed models. This research is going to use mainly the works from (WEINMANN M. et al., 2021), (RADANOVIC, M; KOSHELHAM, K; FRASER, C; 2022) and (LI J. et al., 2022) as a knowledge pillar, and Microsoft’s guide (Conceitos Básicos do HoloLens 2, n.d) for the prototype development.
+
+### II. OBJECTIVE(S)
+
+            The main goal of this research is to propose a computational system prototype for composition of a mixed reality immersive virtual environment, made from 3D reconstructions of objects based on digital stereoscopic images and photogrammetry.
+
+### III. MATERIALS AND METHODS
+
+            This research is founded on the assumption to use only photogrammetry methods without relying on technologies such as LiDAR, ToF and others. Therefore, the content mentioned here will be following this assumption and using photogrammetry with RGB images only to acquire the 3D models.
+
+#### *3.1 – Devices*
+
+            Regarding the image acquisition device, I have used a regular phone’s camera. The phone’s model was a Redmi Note 11, equipped with a 50MP main camera with 1.8 of aperture size, which is close to the recommended f/1.4 described on Meshroom’s guide (MESHROOM, 2021) and a shutter speed of 1/4000s, the exact value recommended on this same guide.
+ 
+            For all tests further mentioned in this paper, a desktop computer with the respective specifications was used: Windows 11 operational system, AMD Ryzen 5 2600 processor, Nvidia GTX 1650 OC graphics card, SSD 480m/s and 16gb of ram. The operational system was not running any non-native processes besides Nvidiasoftware, Alice Vision scripts and the Meshroom software itself. For Polycam, all the data was cloud computed.
+
+#### *3.2 – Software and Settings for Photogrammetry*
+
+            For photogrammetry, the commercially available mobile application “Polycam” using its non-LiDAR photogrammetry functionality, and the desktop freeware “Meshroom” from AliceVision were used. Both technologies were tested against each other to compare the time taken to complete each reconstruction and its resultant quality. The conditions set for the photogrammetry were based on the principles for high quality indoor scene reconstructions (LI J. et al., 2022), with no bright, shiny, and reflective objects such as mirrors and windows, which were all occluded.
+
+            The settings used for Meshroom were the provided default nodes. And for Polycam manual photo mode was used with mesh quality set to “medium” – which is the highest quality in the free plan, and object masking off.
+
+#### *3.3 – Quality Criteria*
+
+            The criteria for quality measurement was divided into three levels: unusable, bad, good, and great. For unusable quality, the conditions were to have inverted normals or high deformities, enough to make the reconstruction unrecognizable. For bad quality there would be big loss in details, a noisy mesh (considerable amount of artifacts) and missing sides, parts and sections. For good quality, a small loss in details was considered, meaning most of the object’s surface details such as knobs, tags and handles were recognizable, with no missing sides and/or parts. Finally, for great quality, the criteria to match were almost no loss in details, clean mesh or with a small amount of artifacts and perfectly recognizable sides, parts and sections.
+ 
+            The quality evaluation didn’t take into account loose fragments out of the mesh since every piece, no matter what software, often needs to be cleaned before being used.
+
+#### *3.4 – Testing Scopes*
+
+The tests were divided into two scopes: the first scope was devoted to indoor environments, and the other for single objects. The best results were used to compose the simulation into the prototype, to make an interactable and immersive virtual environment.
+ 
+            The tests for scope one were run a total of three times for the same environment, each one with a new dataset. The Meshroom software was removed from the computer and had its temporary files and folders cleaned each test to make sure to avoid any cache, since after the first three tests it strangely showed gradually faster results. The tests were repeated, and the results stood the same, so the second batch was used and the first discarded.
+
+#### *3.5 – Methods for Image Acquisition*
+
+
+<br>
+
+Figure 1 – Representation of the room’s sides division for image acquisition. 2D division representation as an unfolded cube, enumerated, with the sections inside each side as gray stripes (left), Real photos of the room representing each side (right).
+![Figure 1 – Representation of the room’s sides division for image acquisition. 2D division representation as an unfolded cube, enumerated, with the sections inside each side as gray stripes (left), Real photos of the room representing each side (right).](https://i.imgur.com/rRLm19q.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+Figure 2 – Representation of the room’s sides division for image acquisition. 2D division representation (left), 2D representation over a real photo of the room (right).
+![Figure 2 – Representation of the room’s sides division for image acquisition. 2D division representation (left), 2D representation over a real photo of the room (right).](https://i.imgur.com/uDAMqul.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+The method utilized for environment image acquisition (scope one) was made based on an imaginary division of the analyzed room in six sides by two hundred photos, each side with thirty-three photos each, Figure 1. The two photos left by the division of two hundred by six were taken on side number five, making this specific side always two photos bigger.
+All six sides were divided equally in three sections – top, middle, and bottom Figure 2, resulting in eleven photos for each section. The sides’ photos were taken with roughly the same motion: starting from bottom to top, alternating between right and left in each section – a zigzag-like motion. This method was utilized in both software for image acquisition.
+
+<br>
+
+Figure 3 – Representation of the object division in three parts for image acquisition.
+Right view (left), Top view (middle), Left view (right).
+![Figure 3 – Representation of the object division in three parts for image acquisition.  Right view (left), Top view (middle), Left view (right).](https://i.imgur.com/yVnOkFm.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+For the image acquisition for single objects (scope two), a soft body (plushie) was used and divided in 3 main parts: left, right and top, as it can be seemed in Fig. 3. The left and right parts took in account all the object’s side features, from the respective side’s front to its back. The top part contemplates from the front to the top, to the back. This way, all the object’s surface is captured except from its base – which, in soft bodies, usually can’t be captured anyway. A total of ninety photos were taken and distributed equally among all the parts.
+
+#### *3.6 – The Prototype Application*
+
+Finally, for the development of the first prototype version, the Unity Game Engine was used together with the cross-platform toolkit MRTK and the software Mixed Reality Feature Tool for Unity. The developed application used OpenXR API as a standard model for better adaptation in other devices. This version was made for Microsoft’s mixed reality device: HoloLens 2.
+
+### IV. PARTIAL RESULTS
+
+#### *4.1 – Scope One: Indoor Environments*
+
+
+<br>
+
+Figure 4 – Best Meshroom’s room reconstruction (attempt 2), with holes and defects in pink. The two right images were rendered with a distorted camera on Blender, with a larger focal length for a better view. Top model view (left), Room side 5 (top-right), Room side 2 (bottom-right).
+
+![Figure 4 – Best Meshroom’s room reconstruction (attempt 2), with holes and defects in pink. The two right images were rendered with a distorted camera on Blender, with a larger focal length for a better view. Top model view (left), Room side 5 (top-right), Room side 2 (bottom-right).](https://i.imgur.com/OICvuhP.png)
+![]()Source: MAGALHÃES, D., 2023.
+
+<br>
+
+Figure 5 – Best Polycam’s room reconstruction (attempt 1), with holes and defects in pink, the two right images were rendered with a distorted camera on Blender, with a larger focal length for a better view. Top model view (left), Room side 5 (top-right), Room side 2 (bottom-right).
+![Figure 5 – Best Polycam’s room reconstruction (attempt 1), with holes and defects in pink, the two right images were rendered with a distorted camera on Blender, with a larger focal length for a better view. Top model view (left), Room side 5 (top-right), Room side 2 (bottom-right).](https://i.imgur.com/nJV1lnr.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+%%caption:Table 1 – Indoor environment reconstruction attempts.
+
+| Software | Attempt | Reconstruction Time (hh:mm) | Quality |
+| -------- | ------- | --------------------------- | ------- |
+| Meshroom | 1 | 04:00 | Good |
+| Meshroom | 2 | 03:06 | Good |
+| Meshroom | 3 | 02:20 | Bad |
+| Polycam | 1 | 00:18 | Great |
+| Polycam | 2 | 00:17 | Unusable |
+| Polycam | 3 | 00:21 | Unusable |
+
+
+The results Table 1, were generally good using Meshroom, the sides are easily recognizable, and the mesh topology is well-connected, but it tends to be noisy and with missing sections or big holes that can hurt the immersion later in the simulation. Considering the machine in which the tests were run, the average reconstruction time of 3 hours and 8 minutes is a valid and expected number.
+ 
+            Polycam’s results Table 1, there were almost no usable meshes for indoor rooms. Despite its fast reconstruction times of 18.5 minutes on average, the reconstructions were unusable most of the time with inverted normals, highly deformed geometry and pointy edges. With rare great exceptions, it has proved itself to be a volatile software for this scope.
+ 
+            To conclude, Meshroom’s results are consistent in terms of quality, with good detail retention and acceptable reconstruction time. Easily recognizable – which is important for immersion and occasionally manual improvement, so it will be used as the main software for this scope. Meanwhile, Polycam’s results were proven to be volatile and controversial, they were usually unusable and impossible to improve. Even with similar datasets, it tended to be unstable and deliver highly deformed meshes. The controversy resides within the quality aspect, since the only time it worked Figure 5, the mesh was almost perfect with just a few holes on the sides 5, 2, and 4, – all in top sections, and great topology almost without noise. It is an unreliable software for this scope, but when it works, the results can be better than Meshroom’s.
+
+#### *4.2 – Scope Two: Single Objects*
+
+
+<br>
+
+Figure 6 – Best Meshroom’s single object reconstruction attempt (attempt 3). Top model
+view (left), Left model view (middle), Right model view (right).
+![Figure 6 – Best Meshroom’s single object reconstruction attempt (attempt 3). Top model  view (left), Left model view (middle), Right model view (right).](https://i.imgur.com/3aFnSe8.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+Figure 7 – Best Polycam’s single object reconstruction (attempt 3). Top model view (left),
+Left model view (middle), Right model view (right).
+![Figure 7 – Best Polycam’s single object reconstruction (attempt 3). Top model view (left),  Left model view (middle), Right model view (right).](https://i.imgur.com/k3m7ZQY.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+%%caption:Table 2 – Single object reconstruction attempts.
+
+| Software | Attempt | Reconstruction Time (hh:mm) | Quality |
+| -------- | ------- | --------------------------- | ------- |
+| Meshroom | 1 | 01:26 | Bad |
+| Meshroom | 2 | 01:41 | Bad |
+| Meshroom | 3 | 01:24 | Good |
+| Polycam | 1 | 00:11 | Great |
+| Polycam | 2 | 00:08 | Great |
+| Polycam | 3 | 00:08 | Great |
+
+
+<br>
+
+            Meshroom’s results Table 2, took a reasonable amount of time to make the reconstruction, with an average of 90 minutes to completion. The quality was scanty, even though the meshes were not unusable, the number of missing parts were generally huge and would not be acceptable for a free interaction scenario, where the user could see all its sides by moving and rotating the object, since it could break the immersion. The last result was good and very suitable for full interaction scenarios, but no remarkable difference in its dataset was observed with the naked eye in comparison with the others to explain the drastic change in quality. The brightness and focus looked roughly the same between all the three sets.
+
+            The Polycam’s results Table 2, were impressive, with an average reconstruction time of 9 minutes and great quality. Some deformities in top parts were observable but are not enough to break the immersion inside a simulation, and well resemble the real object.
+           
+            In conclusion, Meshroom was unreliable and unpredictable for this scope. With the naked eye no differences could be found amongst the datasets in terms of brightness, focus and/or contrast, and since those factors are prone to change when not in a controlled environment, if small changes can drastically change the results, it turns unreliable for this scope. Polycam proved to be better for scope two, with reliable and high-quality results, so it will be used as the main software for this scope.
+
+### V. TECHNOLOGICAL DEVELOPMENT PROCESSES AND/OR PROCEDURES
+
+
+<br>
+
+Figure 8 – Developed prototype running on Microsoft’s HoloLens 2 emulator. Starting screen inside the reconstructed room with the reconstructed single object (left), Single object being interacted with, levitating by the user’s hand input (right).
+![]()![Figure 8 – Developed prototype running on Microsoft’s HoloLens 2 emulator. Starting screen inside the reconstructed room with the reconstructed single object (left), Single object being interacted with, levitating by the user’s hand input (right).](https://i.imgur.com/K8VFFFd.png)
+Source: MAGALHÃES, D., 2023.
+
+<br>
+
+            The first prototype version was developed following Microsoft’s starter’s guide (Conceitos Básicos do HoloLens 2, n.d) and further improved using the same strategies taught by the guide. It starts in a simple environment, which is a 3D reconstruction obtained using the methods mentioned in this paper. The simulated environment itself is not movable, acting like a stage for interactions as a static body and is displayed on top of the real-world. The software also has a 3D reconstructed object which the user can interact with using hand gestures together with the device’s default eye-tracking for better precision. This object has basic physics and can be thrown, rotated, and moved.
+
+            Despite Meshroom and Polycam’s reconstructions having a reasonable precision regarding size measurement, in this prototype the Unity’s default unit size was used and the original models’ size discarded for the sake of simplicity.
+
+            Both reconstructions used were not polished in any regard, only the raw models were used which affected performance.
+The images Figure 7 and Figure 8 are screen-captures from the developed software running on the official Microsoft’s HoloLens 2 emulator, and all worked as expected. The simulated environment’s bounding box reminds the real-world and its surfaces are well divided, giving the user a reasonable immersive experience.
+
+### VI. FUTURE STAGES
+
+            Future stages will focus on improving the prototype, collecting more information on methods for data-driven reconstruction improvement and other general techniques that can be automated to create better 3D models from photogrammetry.
+
+            The next generation of 3D reconstructions for this prototype will undergo retopology, mesh denoising, decimation, and other methods to enhance their quality and reduce their vertices count, resulting in a better performance within the simulation.
+The goal is to test the prototype in a real device and refactor the code to be more universal and compatible with more OpenXR-based devices other than HoloLens 2. And finally, I aim to explore more applications for this prototype, perform a detailed analysis of them, and identify the necessary solutions for the chosen scenarios.
+
+### V. REFERENCES
+
+HÜBNER, Patrick; WEINMANN, Martin; WURSTHORN, Sven; WEINMANN, Michael. <em>Efficient 3D Mapping and Modelling of Indoor Scenes with the Microsoft HoloLens: A Survey</em>. PFG - Journal of Photogrammetry, Remote Sensing and Geoinformation Science. [https://doi.org/10.1007/s41064-021-00163-y](https://doi.org/10.1007/s41064-021-00163-y). 2021.
+ 
+LI, Jianwei; WU, Yihong; LIU, Yangdong; SHEN, Yanfei; GAO, Wei. <em>High-quality Indoor Scene 3D Reconstruction with RGB-D Cameras: A Brief Review in Computational Visual Media</em>, v.8. Available at: [https://doi.org/10.1007/s41095-021-0250-8](https://doi.org/10.1007/s41095-021-0250-8). 2022.
+ 
+RADANOVIC, Marko; KHOSHELHAM, Kourosh; FRASER, Clive. Virtual Element Retrieval in Mixed Reality. In: XXIV ISPRS Congress, 6–11 Jun. 2022, Nice, France. <em>Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences</em>, v.4. 2022.
+ 
+*O que é Realidade Misturada? - Mixed Reality [What is Mixed Reality? - Mixed Reality]* – Microsoft Learn. Available at: [https://learn.microsoft.com/pt-br/windows/mixed-reality/discover/mixed-reality](https://learn.microsoft.com/pt-br/windows/mixed-reality/discover/mixed-reality). Accessed in 26 jan 2023.
+ 
+<em>Conceitos Básicos do HoloLens 2: Desenvolver Aplicativos de Realidade Misturada [HoloLens 2 Basics: Developing Mixed Reality Applications] - Training</em>. Microsoft Learn. [https://learn.microsoft.com/pt-br/training/paths/beginner-hololens-2-tutorials/](https://learn.microsoft.com/pt-br/training/paths/beginner-hololens-2-tutorials/). n.d.
+ 
+<em>Tutorial: Meshroom for Beginners</em> – Meshroom v2021.0.1 documentation. Available at: [https://meshroom-manual.readthedocs.io/en/latest/tutorials/sketchfab/sketchfab.html](https://meshroom-manual.readthedocs.io/en/latest/tutorials/sketchfab/sketchfab.html). 2021.
+
+### VII. COPYRIGHT
+
+Copyright: The author(s) is(are) solely responsible for the material included in this paper.
+
+<br>
+
+***
+
+<br>
