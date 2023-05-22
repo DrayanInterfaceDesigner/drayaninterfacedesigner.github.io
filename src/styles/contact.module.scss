@@ -1,7 +1,21 @@
 .HeroCard__Container {
     display: none;
 }
-
+@media screen and (min-width: 1024px) and (orientation: landscape), (orientation: landscape) {
+    .Contact__Container {
+        grid-area: form;
+        align-self: center;
+        // background-color: aqua;
+        .Contact__Aligner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            // min-height: 100%;
+            margin-top: 2.5rem;
+        }
+    }
+}
 @media screen and (min-width: 1025px) {
     .Contact {
         display: grid;
@@ -12,8 +26,15 @@
     }
     .Contact__Container {
         grid-area: form;
+        align-self: center;
+        // background-color: aqua;
         .Contact__Aligner {
-            margin-top: -2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            // min-height: 100%;
+            margin-top: 2.5rem;
         }
     }
     .Contact__BulletContact {

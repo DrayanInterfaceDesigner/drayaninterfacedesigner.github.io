@@ -1,0 +1,196 @@
+.ContactCard {
+    padding: .4rem;
+    border: 1px solid var(--border-off-color);
+    border-radius: 20rem;
+    width: 100%;
+    margin: 2rem 0;
+
+    &:hover, &:active {
+        border: 1px solid var(--border-on-color);
+    }
+
+    .ContactCard__Wrapper {
+        width: 100%;
+    }
+
+    .ContactCard__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: .4rem;
+
+        .ContactCard__external {
+            margin-inline: .5rem;
+        }
+    }
+
+    .ContactCard__text {
+        font-size: 1.2rem;
+        font-weight: 200;
+        letter-spacing: .3rem;
+    }
+
+    .ContactCard__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        text-align: center;
+        width: 15%;
+    }
+
+    .ContactCard__icon__container {
+        width: 60%;
+        margin: .2rem 0 0 0;
+    }
+
+    .ContactCard__more {
+        display: none;
+        .ContactCard__description{}
+        .ContactCard__external {
+            // margin-inline: .5rem;
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1024px) and (orientation: landscape), (orientation: landscape) {
+    .ContactCard {
+        padding: .4rem;
+        border: 1px solid var(--border-off-color);
+        border-radius: 2rem;
+        width: 60%;
+        margin: 2.5rem 0;
+        transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+        &:hover, &:active {
+            border: 1px solid var(--border-on-color);
+            transform: scale(1.1) !important;
+        }
+    
+        .ContactCard__Wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+    
+        .ContactCard__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 4rem;
+
+            .ContactCard__external {
+                display: none;
+            }
+        }
+    
+        .ContactCard__text {
+            font-size: 1.2rem;
+            font-weight: 200;
+            letter-spacing: .3rem;
+        }
+    
+        .ContactCard__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            text-align: center;
+            width: calc(1rem + 35%);
+        }
+    
+        .ContactCard__icon__container {
+            width: 100%;
+            margin: .2rem 0 0 0;
+        }
+    
+        .ContactCard__more {
+            display: block;
+            padding: 3rem;
+            .ContactCard__description{
+                text-align: center;
+            }
+            .ContactCard__external {
+                // margin-inline: .5rem;
+                display: inline;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .ContactCard {
+        padding: .4rem;
+        border: 1px solid var(--border-off-color);
+        border-radius: 2rem;
+        width: 100%;
+        margin: 2.5rem;
+        transition: .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+        &:hover, &:active {
+            border: 1px solid var(--border-on-color);
+            transform: scale(1.1) !important;
+        }
+    
+        .ContactCard__Wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+    
+        .ContactCard__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 4rem;
+
+            .ContactCard__external {
+                display: none;
+            }
+        }
+    
+        .ContactCard__text {
+            font-size: 1.2rem;
+            font-weight: 200;
+            letter-spacing: .3rem;
+        }
+    
+        .ContactCard__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            text-align: center;
+            width: calc(1rem + 35%);
+        }
+    
+        .ContactCard__icon__container {
+            width: 100%;
+            margin: .2rem 0 0 0;
+        }
+    
+        .ContactCard__more {
+            display: block;
+            padding: 3rem;
+            .ContactCard__description{
+                text-align: center;
+            }
+            .ContactCard__external {
+                // margin-inline: .5rem;
+                display: inline;
+            }
+        }
+    }
+}

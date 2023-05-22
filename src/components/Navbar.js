@@ -26,21 +26,25 @@ const Navbar = ({lastActiveButton}) => {
     <nav className={styles.Navbar}>
         <div className={styles.Navbar__container}>
           <Link 
+            data-tooltip="home"
             onClick={() => handleActive(1)} 
             className={`material-symbols-outlined ${styles.option} ${onBtn == 1? styles.active : ''}`} 
             href='/'>window
           </Link>
           <Link 
+            data-tooltip="projects"
             onClick={() => handleActive(2)} 
             className={`material-symbols-outlined ${styles.option} ${onBtn == 2? styles.active : ''}`} 
             href='/projects'>handyman
             </Link>
           <Link 
+            data-tooltip="articles"
             onClick={() => handleActive(3)} 
             className={`material-symbols-outlined ${styles.option} ${onBtn == 3? styles.active : ''}`} 
             href='/articles'>article
           </Link>
           <Link 
+            data-tooltip="contact"
             onClick={() => handleActive(4)} 
             className={`material-symbols-outlined ${styles.option} ${onBtn == 4? styles.active_brilliant : styles.brilliant}`} 
             href='/contact'>mail
