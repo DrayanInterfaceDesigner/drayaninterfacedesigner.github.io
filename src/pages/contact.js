@@ -64,11 +64,11 @@ const Contact = () => {
               <Github></Github>
             </ContactCard>
 
-            <ContactCard social="Linkedin" link="https://www.linkedin.com/in/drayan-silva-magalh%C3%A3es-6a8061271/" description={github_description}>
+            <ContactCard social="Linkedin" link="https://www.linkedin.com/in/drayan-silva-magalh%C3%A3es-6a8061271/" description={linkedin_description}>
               <Linkedin></Linkedin>
             </ContactCard>
 
-            <ContactCard social="E-mail" link="mailto: drayanreset@gmail.com" description={github_description}>
+            <ContactCard social="E-mail" link="mailto: drayanreset@gmail.com" description={email_description}>
               <Mail></Mail>
             </ContactCard>
 
