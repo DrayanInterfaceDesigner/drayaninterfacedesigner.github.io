@@ -10,16 +10,38 @@
     background: rgba( 15, 14, 15, 0.25 );
     backdrop-filter: blur( 6px );
     -webkit-backdrop-filter: blur( 6px );
-
+    z-index: 99999;
 
     .option {
+        position: relative;
         margin-inline: 1.3rem;
         font-size: 1.7rem;
         color: rgba(178,178,178,1);
 
+        &::before {
+            display: none;
+            content: attr(data-tooltip);
+            position: absolute;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1rem;
+            top: -2rem;
+            left: 2rem;
+            padding: .5rem 2.2rem;
+            border: 1px solid var(--border-on-color);
+            border-radius: 1rem 1rem 1rem .1rem;
+            background: rgba( 15, 14, 15, 1 );
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        
         &:hover {
             color: rgb(255, 255, 255);
             text-shadow: 0rem 0rem .2rem rgba(250, 250, 250, .2);  
+            &::before{
+                display: block;
+                animation: .3s slash cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+            }
         }
     }
 
@@ -97,6 +119,26 @@
     100% {
         text-shadow: 0rem 0rem .4rem rgba(229, 158, 0, .3);  
     }
+}
+
+@keyframes slash {
+    0% {
+        opacity: .3;
+        transform: translateY(10%) translateX(20%);
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(-5%);
+    }
+    66% {
+        opacity: 1;
+        transform: translateY(3%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
 }
 
 /* Medium screens (tablets) */
