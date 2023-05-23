@@ -34,7 +34,7 @@ const HeroCard = () => {
             <LineContact text="/drayan-silva-magalhães" link='https://www.linkedin.com/in/drayan-silva-magalh%C3%A3es-6a8061271/'>
               <Linkedin></Linkedin>
             </LineContact>
-            <LineContact text="drayanreset@gmail.com" link='mailto: drayanreset@gmail.com'>
+            <LineContact text="drayan.magalhaes@pucpr.edu.br" link='mailto: drayan.magalhaes@pucpr.edu.br'>
               <Mail></Mail>
             </LineContact>
           </div>

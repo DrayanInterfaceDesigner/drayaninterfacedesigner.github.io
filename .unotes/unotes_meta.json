@@ -11,7 +11,33 @@
     "public": {
       "name": "public",
       "isOrdered": true,
-      "folders": {},
+      "folders": {
+        "images": {
+          "name": "images",
+          "isOrdered": true,
+          "folders": {
+            "featured": {
+              "name": "featured",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "icons": {
+              "name": "icons",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "thumbs": {
+              "name": "thumbs",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        }
+      },
       "files": {}
     },
     "src": {
@@ -42,9 +68,7 @@
                   "name": "articles",
                   "isOrdered": true,
                   "folders": {},
-                  "files": {
-                    "test": 0
-                  }
+                  "files": {}
                 }
               },
               "files": {}
@@ -61,6 +85,14 @@
               "folders": {
                 "projects": {
                   "name": "projects",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {
+                    "alona-engine": 0
+                  }
+                },
+                "old": {
+                  "name": "old",
                   "isOrdered": true,
                   "folders": {},
                   "files": {}

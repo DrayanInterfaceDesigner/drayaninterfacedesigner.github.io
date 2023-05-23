@@ -68,7 +68,7 @@ const Contact = () => {
               <Linkedin></Linkedin>
             </ContactCard>
 
-            <ContactCard social="E-mail" link="mailto: drayanreset@gmail.com" description={email_description}>
+            <ContactCard social="E-mail" link="mailto: drayan.magalhaes@pucpr.edu.br" description={email_description}>
               <Mail></Mail>
             </ContactCard>
 
