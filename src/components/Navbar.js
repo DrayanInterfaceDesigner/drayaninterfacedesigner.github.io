@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.scss'
 import { setCookie, parseCookies } from 'nookies'
+import Linkedin from './svg/Linkedin'
+import BulletContact from './BulletContact'
+import BubbleContact from './BubbleContact'
 
 const Navbar = ({lastActiveButton}) => {
   const [onBtn, setActive] = useState(lastActiveButton )
@@ -47,8 +50,18 @@ const Navbar = ({lastActiveButton}) => {
             data-tooltip="contact"
             onClick={() => handleActive(4)} 
             className={`material-symbols-outlined ${styles.option} ${onBtn == 4? styles.active_brilliant : styles.brilliant}`} 
-            href='/contact'>mail
+            href='/contact'>alternate_email
           </Link>
+
+          <a 
+            data-tooltip="LinkedIn"
+            onClick={() => handleActive(4)} 
+            className={`material-symbols-outlined ${styles.option} ${styles.option__external} ${onBtn == 4? styles.active_brilliant : styles.brilliant}`} 
+            href='https://www.linkedin.com/in/drayan-silva-magalh%C3%A3es-6a8061271/'
+            target='blank'>
+            <BubbleContact style={{width: 1.5 + 'rem'}}><Linkedin style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}} ></Linkedin></BubbleContact>
+          </a>
+          
         <span className={styles.follow__bar}></span>
         </div>
     </nav>
