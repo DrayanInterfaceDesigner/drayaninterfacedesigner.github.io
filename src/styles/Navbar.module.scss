@@ -165,7 +165,7 @@
             margin: 1.3rem;
             font-size: 1.7rem;
             color: rgba(178,178,178,1);
-
+            fill: white;
             &::before {
                 display: none;
                 content: attr(data-tooltip);

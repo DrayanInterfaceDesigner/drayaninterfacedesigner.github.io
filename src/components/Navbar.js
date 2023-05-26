@@ -50,7 +50,8 @@ const Navbar = ({lastActiveButton}) => {
             data-tooltip="contact"
             onClick={() => handleActive(4)} 
             className={`material-symbols-outlined ${styles.option} ${onBtn == 4? styles.active_brilliant : styles.brilliant}`} 
-            href='/contact'>alternate_email
+            href='/contact'>
+              alternate_email
           </Link>
 
           <a 
