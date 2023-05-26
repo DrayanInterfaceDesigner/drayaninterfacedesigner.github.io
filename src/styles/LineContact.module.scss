@@ -11,5 +11,9 @@
     }
     p {
         text-decoration: underline;
+        transition: .2s;
+        &:hover {
+            text-decoration-color: var(--theme-color);
+        }
     }
 }
